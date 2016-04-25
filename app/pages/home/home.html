@@ -1,0 +1,16 @@
+<ion-navbar *navbar danger>
+  <ion-title>
+    Hobby Kids
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="home">
+  <ion-card *ngFor="#video of videos">
+  	<div class="video-container">
+      <iframe width="288" height="216" src="https://www.youtube.com/embed/{{ video.id.videoId }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </ion-card>
+  <ion-infinite-scroll (infinite)="more($event)">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>
